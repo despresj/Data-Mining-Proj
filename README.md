@@ -8,6 +8,7 @@ Data can be found [here](https://www.kaggle.com/c/demand-forecasting-kernels-onl
 - Graphics and slides: Joe S., Pelumi
 - Finish the ts predictions (submit to kaggle)
 
+Meet again Week of 11/29
 
 Due Dec 5
 
