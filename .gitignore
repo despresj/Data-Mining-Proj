@@ -2,4 +2,5 @@
 .ipynb_checkpoints
 .vscode
 data/forecasts_for_ml/
+data/predictions/
 notebooks/__pycache__/
