@@ -1,6 +1,5 @@
 .DS_Store
 .ipynb_checkpoints
 .vscode
-data/forecasts_for_ml/
-data/predictions/
+data/
 notebooks/__pycache__/
