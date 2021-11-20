@@ -3,3 +3,4 @@
 .vscode
 data/
 notebooks/__pycache__/
+*.csv
