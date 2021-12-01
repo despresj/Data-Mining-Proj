@@ -55,6 +55,14 @@ NeuralProphet, is a forecasting library that expands on facebook prophet and inc
 ARDL models add to the above auto regressive model, however in addition to seasonality with is fit with a vector of indicator variables. and trend, in this case we are adding an explanatory variable of time and fitting the model to laggs of time.
 
 ## Test set performance
+|Model|MAPE|
+|---|---|
+|prophet         |   6.645|
+|ardl            |   8.408|
+|neural_prophet  |  10.263|
+|exp_smooth      |  10.674|
+|autoreg         |  12.823|
+|xgb_preds       |  14.887|
 
 ## Feature Detection
 
