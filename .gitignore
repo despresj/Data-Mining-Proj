@@ -5,3 +5,4 @@ data/
 notebooks/__pycache__/
 *.csv
 .Rproj.user
+R/saved_plots

@@ -1,27 +1,77 @@
 library(tidyverse)
+library(ggdark)
 
-errors <- read_csv("./data/predictions/errors.csv", )
+theme_set(ggdark::dark_theme_minimal(base_size = 22))
+
+errors <- read_csv("./data/predictions/errors.csv") 
 store_sales <- read_csv("data/store_demand_clean.csv")
 
 test_date <- min(errors$date)
 
 plot_df <- bind_rows(errors, store_sales) %>% 
+  mutate(date = lubridate::ymd(date)) %>% 
   filter(store_item == "1-1") %>% 
-  pivot_longer(autoreg:neural_prophet, names_to = "model", values_to = "pred_sales")
+  pivot_longer(autoreg:neural_prophet, names_to = "model", values_to = "pred_sales") %>%  
+  mutate(model = case_when(
+    model == "ardl" ~ "Autoregressive Distributed Lag",
+    model == "autoreg" ~ "Vector Autoregression",
+    model == "exp_smooth" ~ "Seasonal Exponential Smoothing",
+    model == "neural_prophet" ~ "Neural Prophet",
+    model == "prophet" ~ "Prophet",
+    model == "xgb_preds" ~ "XGBoost Forecast",
+  ))
+
+my_saver <- function (name) {
+  ggsave(filename = paste0("R/saved_plots/", name, ".png"),
+         width = 16, height = 9)
+}
 
 base_plot <- plot_df %>%
-  ggplot((aes(x = date, y = sales))) +
-  geom_line()
-
-base_plot +
-  stat_smooth(se = FALSE, span = 0.1, method = "loess")
-
-base_plot +
-  stat_smooth(se = FALSE, method = "lm", color = "red") 
-
-plot_df %>% 
   filter(date <= test_date) %>% 
   ggplot((aes(x = date, y = sales))) +
-  geom_line() +
-  xlim(min(store_sales$date), max(store_sales$date))
+  geom_line(color = "grey44") + 
+  scale_x_date(
+    date_breaks = "7 month",
+    date_labels = "%b '%y",
+    limits = c(min(store_sales$date), max(store_sales$date))) +
+  labs(title = "Daily Sales Training Data", 
+       subtitle = " ",
+       x = NULL, y = "Units Sold")
 
+base_plot
+
+my_saver("data")
+
+base_plot +
+  stat_smooth(se = FALSE, span = 0.1, method = "loess") +
+  labs(subtitle = "Observe the Strong Seasonality")
+
+my_saver("seasonality")
+
+base_plot +
+  stat_smooth(se = FALSE, method = "lm", color = "red") +
+  labs(subtitle = "Notice a Slight Trend")
+
+my_saver("trend")
+
+plots_fct <- base_plot +
+  geom_point(
+    data = subset(plot_df),
+    aes(x = date, y = pred_sales), color = "blue", size = 0.25) +
+  labs(title = "Daily Sales Point Forecasts") +
+  facet_wrap(~model, ncol = 2)+
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+
+plots_fct
+
+my_saver("point_fcast")
+
+plots_fct + 
+  geom_line(data = filter(plot_df, date > test_date), 
+            aes(x = date, y = sales),
+                      color = "darkred", alpha = 0.5) +
+  labs(title = "Daily Sales Point Forecasts With Testing Set") +
+  
+my_saver("point_fcast_test")
