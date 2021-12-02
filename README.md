@@ -2,21 +2,24 @@
 
 Data can be found [here](https://www.kaggle.com/c/demand-forecasting-kernels-only/overview)
 
-## TODO:
-
-- Written Report: Matt
-- Graphics and slides: Joe S., Pelumi
-- Finish the ts predictions (submit to kaggle)
-
-- Get descriptive stats of model performance.
-- write-up on models.
-- plots
+## Schedule
 
 Friday 12/3 at NOON run through
 
 Due Dec 5
 
-PPT 
+## TODO:
+
+- [ ] Get Concluding Metrics
+	- Review Code
+	- Switch MAPE to SMAPE
+
+- [ ] Video Record Slide Presentation
+	- Finish Slides in Each Section
+	
+- [ ] Finish Report
+
+
 
 | member | role|
 |---|--|
@@ -24,8 +27,7 @@ PPT
 |Joe S.| Exploratory data analysis |
 |Joe D | Models |
 |Pelumi| Performance and Metrics|
-|Aneesh| Conclusions future considerations and Optimization|
-|
+|Aneesh| Conclusions future considerations and Optimization||
 
 # packages used and versions
 | Package                    |  Version|
