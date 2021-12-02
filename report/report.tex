@@ -8,12 +8,12 @@
 \usepackage{babel}
 
 \setlength{\droptitle}{-12em}  
-
+\setlength\bibitemsep{\baselineskip}
 \title{Experimenting with Scaleable Forecasting Models}
 
 
 \author{
-    Matthew, Coghlin\\
+    Matthew Coghlin\\
   	\and
   	Pelumi Dacosta\\
     \and
@@ -37,6 +37,8 @@ The ability to generate accurate forecasts is of great interest organizations th
 \section{Data}
 
 The data obtained for this project are provided as part of a kaggle challenge which we are participating. The competition challenges participants to forecast daily retail sales demand \cite{kaggle}. As contestants, we are given 5 years of training data, with the daily sales of 50 different products from ten different stores. This is a total of 913,000 data points to train forecasting models. The goal is to forecast the next 90 days for each of the 50 products and 10 stores. Judged by Mean Absolute Scaled Error (MASE)
+
+$${SMAPE}={\frac {100\%}{n}}\sum _{t=1}^{n}{\frac {\left|F_{t}-A_{t}\right|}{(|A_{t}|+|F_{t}|)/2}}$$
 
 The data required very little preparation. There were several datapoints that were zero we switched to a one because the statsmodels implimentzation of vector autoregression did not support zero values. We only did that once. After that we combined the stores and items into one string column to avoid nesting loops when iterationg over stores and items.
 
@@ -95,6 +97,8 @@ Due to the way kaggle scores, final Predictions could not be a weighted average 
 
 The models ensamble was able to outperform each of the individual. In practice, it is likely that we are too use these methods to forecast a months sales. this would be aggrigated.
 
+\clearpage
+\onecolumn
 
 \bibliography{References}
 
