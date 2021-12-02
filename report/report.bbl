@@ -1,0 +1,71 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Montero-Manso%
+, Athanasopoulos%
+, Hyndman%
+\BCBL {}\ \BBA {} Talagala%
+}{%
+Montero-Manso%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+montero2020fforma}
+\APACinsertmetastar {%
+montero2020fforma}%
+\begin{APACrefauthors}%
+Montero-Manso, P.%
+, Athanasopoulos, G.%
+, Hyndman, R\BPBI J.%
+\BCBL {}\ \BBA {} Talagala, T\BPBI S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {FFORMA: Feature-based forecast model averaging} {Fforma:
+  Feature-based forecast model averaging}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{International Journal of Forecasting}{36}{1}{86--92}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {Store Item Demand Forecasting Challenge}}{%
+\APACcitebtitle {Store Item Demand Forecasting Challenge}}{%
+{\protect \APACyear {2018}}%
+}]{%
+kaggle}
+\APACinsertmetastar {%
+kaggle}%
+\APACrefbtitle {Store Item Demand Forecasting Challenge.} {Store item demand
+  forecasting challenge.}
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Taylor%
+\ \BBA {} Letham%
+}{%
+Taylor%
+\ \BBA {} Letham%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+taylor2018forecasting}
+\APACinsertmetastar {%
+taylor2018forecasting}%
+\begin{APACrefauthors}%
+Taylor, S\BPBI J.%
+\BCBT {}\ \BBA {} Letham, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Forecasting at scale} {Forecasting at scale}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The American Statistician}{72}{1}{37--45}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
