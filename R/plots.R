@@ -10,7 +10,6 @@ test_date <- min(errors$date)
 
 plot_df <- bind_rows(errors, store_sales) %>% 
   mutate(date = lubridate::ymd(date)) %>% 
-  filter(store_item == "1-1") %>% 
   pivot_longer(autoreg:neural_prophet, names_to = "model", values_to = "pred_sales") %>%  
   mutate(model = case_when(
     model == "ardl" ~ "Autoregressive Distributed Lag",
@@ -27,7 +26,7 @@ my_saver <- function (name) {
 }
 
 base_plot <- plot_df %>%
-  filter(date <= test_date) %>% 
+  filter(date <= test_date, store_item == "1-1") %>% 
   ggplot((aes(x = date, y = sales))) +
   geom_line(color = "grey44") + 
   expand_limits(y=0) + 
@@ -54,6 +53,45 @@ base_plot +
   labs(subtitle = "Notice a Slight Trend")
 
 my_saver("trend")
+
+facets_to_plot <- function(n = 9){
+  
+  store_items_nine <- plot_df %>% 
+    count(store_item) %>% 
+    slice(1:50) %>% 
+    pull(store_item) %>% 
+    gtools::mixedsort(decreasing = TRUE) %>% 
+    head(n)
+  
+  store_items_nine
+  
+  plot_df %>%
+    filter(date <= test_date, store_item %in% store_items_nine) %>% 
+    ggplot((aes(x = date, y = sales))) +
+    geom_line(color = "grey44") + 
+    expand_limits(y=0) + 
+    scale_x_date(
+      date_breaks = "15 month",
+      date_labels = "%b '%y",
+      limits = c(min(store_sales$date), max(store_sales$date))) +
+    labs(title = "Illustrating the Scale", 
+         subtitle = " ",
+         x = NULL, y = "Units of Product Sold")
+  
+}
+
+facets_to_plot() +
+  facet_wrap(~store_item)
+
+my_saver("nine_fcts")
+
+facets_to_plot(50) +
+  facet_wrap(~store_item, ncol = 10) +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+
+my_saver("fifty_fcts") 
 
 plots_fct <- base_plot +
   geom_point(
