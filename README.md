@@ -10,14 +10,16 @@ Due Dec 5
 
 ## TODO:
 
-- [ ] Get Concluding Metrics
-	- Review Code
-	- Switch MAPE to SMAPE
+- [X] ~Get Concluding Metrics~
+	- ~Review Code~
+	- ~Switch MAPE to SMAPE~
+
+- [ ] Finish Report
 
 - [ ] Video Record Slide Presentation
 	- Finish Slides in Each Section
 	
-- [ ] Finish Report
+
 
 
 
