@@ -1,5 +1,5 @@
 
-\documentclass[12pt,twocolumn,letterpaper]{article}
+\documentclass[16pt,twocolumn,letterpaper]{article}
 \usepackage{apacite}
 
 \usepackage{titling}
@@ -7,10 +7,19 @@
 \usepackage[T1]{fontenc}
 \usepackage{babel}
 
+\usepackage{titlesec}% http://ctan.org/pkg/titlesec
+\titleformat{\section}%
+  [hang]% <shape>
+  {\normalfont\bfseries\Large}% <format>
+  {}% <label>
+  {0pt}% <sep>
+  {}% <before code>
+\renewcommand{\thesection}{}% Remove section references...
+\renewcommand{\thesubsection}{\arabic{subsection}}%
+
 \setlength{\droptitle}{-12em}  
 \setlength\bibitemsep{\baselineskip}
 \title{Experimenting with Scaleable Forecasting Models}
-
 
 \author{
     Matthew Coghlin\\
@@ -31,55 +40,77 @@
 
 \section{Introduction}
 
+Planning any organizational activities such as inventory planning, staffing decisions, budgeting, all depend on some kind of expectations for the future. Forecasting the practice of using current data available to make a prediction about the future value of a variable. Decision makers in government, businesses, and non-profit organizations all require accurate and reliable forecasts when planning their various activities. There are tremendous costs associated with forecasts that are either too high or too low. Therefore, as practitioners, it is essential to minimize forecasting error. 
 
-The ability to generate accurate forecasts is of great interest organizations that need to plan for uncertainty. Governments, businesses, and non-profit organizations are all forced to make forecasts when planning their various activities. As datasets grow, organizations require more and more items forecast. A time-series expert is generally required to carefully tuning ARIMA model parameters \cite{taylor2018forecasting}. Although, this approach is riggerois, it does not scale. Analysts are being asked to generate high quality forecasts for thousands, and even hundreds of thousands of series at a time (m3). The goal of this project is to implement algorithms that generate high quality forecasts with minimal involvement, validate them with a training and testing partitian, and generate ensemble predictions of the different methods.
+Organizations are collecting more and more data as it becomes cheaper to store and more convenient to collect. This presents the opportunity to use more and more data driven forecasts and less judgment based forecasts. A time-series expert is generally required to carefully tune ARIMA model parameters \cite{taylor2018forecasting}. Although, this approach is riggerois, it does not scale, any standard grocery store has more items than you could feasibly tune manually. Analysts could be asked to generate high quality forecasts for thousands, and even hundreds of thousands of series at a time. The goal of this project is to implement algorithms that generate high quality forecasts with minimal involvement, validate them with a training and testing partisan, and generate ensemble predictions of the different methods.
 
 \section{Data}
 
-The data obtained for this project are provided as part of a kaggle challenge which we are participating. The competition challenges participants to forecast daily retail sales demand \cite{kaggle}. As contestants, we are given 5 years of training data, with the daily sales of 50 different products from ten different stores. This is a total of 913,000 data points to train forecasting models. The goal is to forecast the next 90 days for each of the 50 products and 10 stores. Judged by Mean Absolute Scaled Error (MASE)
+The data obtained for this project are provided as part of a Kaggle challenge where participants are to forecast daily retail sales demand \cite{kaggle}. As contestants, we are given 5 years of training data, with the daily sales of 50 different products from ten different stores. This is a total of 913,000 data points to train forecasting models. The goal is to forecast the next 90 days for each of the 50 products and 10 stores. Judged by Scaled Mean Absolute Percentage Error (SMAPE) shown in Equation 1
 
-$${SMAPE}={\frac {100\%}{n}}\sum _{t=1}^{n}{\frac {\left|F_{t}-A_{t}\right|}{(|A_{t}|+|F_{t}|)/2}}$$
+\begin{equation}
+\textrm{SMAPE}={\frac {100\%}{h}}\sum _{t=1}^{h}{\frac {\left|\hat{y}_t-y_t\right|}{(|y_t|+|\hat{y}_t|)/2}}.
+\end{equation}
 
-The data required very little preparation. There were several datapoints that were zero we switched to a one because the statsmodels implimentzation of vector autoregression did not support zero values. We only did that once. After that we combined the stores and items into one string column to avoid nesting loops when iterationg over stores and items.
+where $y_t$ is the actual value, $\hat{y}_t$ is the forecast, and $h$ is the forecast horizon.
 
-EXPLOATORY PLOTS AND DESCRIPTIVE STATISTICS
-These data are highly seasonal with a slight upwared trend. These data have significant noise. the vast majority of data involving human activities have a seasonal and trend component \cite{taylor2018forecasting}. 
+The data required very little preparation. There were several data points that were zero we switched to a one because the one of the algorithms did not support 0 values. After that we combined the stores and items into one string column to avoid nesting loops when iteration over stores and items.
 
-After that, we separated into a training and testing partitians to test. We used the first 1279 (80%) of our timeseries. Then we seperated the remainder of the data as a testing set. This prepares us for running the experiments.
+After that, we separated into training and testing partisans to get an idea of what kind of model performance we can expect. We selected the first 1279 data points or 80\% training set of our time-series. Then we separated the remainder of the data as a testing set. This prepares us for running the experiments.
 
-\section{Experiments}
+(NEED PLOTS)
 
-The project will use that clean data and input it into a feature detection algorythm which quantifies various features of each series. Then Takes the data and runs six different forecasting algorythms to generate a prediction for the remainder of the testing data. Then analyze forecasting errors. Then attempt to use machiene learning methods to select the best model for the data given features
+These data are highly seasonal with a slight upward trend. These data have significant noise. the vast majority of data involving human activities have a seasonal and trend component \cite{taylor2018forecasting}. 
 
-FLOW CHART
+\section{Requirements}
 
-Running Multiple Forecast Models
+Using algorithms to generate high quality forecasts will have strict requirements. These need to be fast, accurate, and interpretable. To be fast, the models must have minimal parameters to tune or be accurate with some specified default parameters. Grid searching model parameters over many series is not feasible. If these alogrythms are fast, many can be ran. Therefore, you can have a very good idea of what kind of performance to expect. Due to the high costs associated with forecasting errors, these models must be interpretable in the event a steakholder is undertain about the model. For obvious reasons, stakeholders should not be asked to place their faith in black-box forecasting models.
 
-Although there are many forecasting models to choose from, there is not much research on when a given forecasting model outperforms another. This is an open field and we are going to test different ones and evaluate them strictly on their performance on testing data. Due to the data having strong weekly swings, we implement several models with an autoregressive terms.
+\section{Models}
 
- Exponential Smoothing
+There are many forecasting models, however we selected models that have been shown to perform well and fit our project requirements. We choose to test two categories of models. First, classical models that have been successfully implemented with years of good results. They are derrived with statistical methods and have strong theoretical justifications. Second, are newer promising machine learning based models. This is an open field and we are going to test different models and evaluate them strictly on their performance on testing data. 
 
-Exponential smoothing, or this is sometimes known as the holt winters method. decomposes the timeseries into three components: Seasonality, Trend, and slope. With the effevt of seasonality and trend to be linear.
 
-XGBoost
+\begin{enumerate}
 
-XGBoost is an implementation of a tree boosting system. This uses decsision tree regression, and fits an ensamble of models fit to the data, then the residuals, then fits the residuals residuals. This ensamble of tree boosting is quite robust and is useful for a variety of different regression and classification tasks.
+\item Seasonal Exponential Smoothing
+\item Vector Autoregression
+\item Autoregressive Distributed Lag
+\item XGBoost 
+\item Prophet
+\item Neural Prophet
+\end{enumerate}
 
-Facebook's Prophet
+\subsection{Seasonal Exponential Smoothing}
 
-Facebook released a forecasting library designed specifically to meet the challenges of generating many high quality forecasts. The model prophet is a General Additive model, that consists of three functions, trend which fits an aperiodic logistic population growth model (we did not limit the growth, however that is a parameter), seasonality is a fouire series fit to the remaining seasonal component, and a holiday parameter which is a vector of user specified holliday periods, the holliday periods saw a drop in sales, however not enough to justify us specifying specific dates. 
+Exponential smoothing, or this is sometimes known as the holt winters method. decomposes the timeseries into three components: Seasonality, Trend, and slope. With the effevt of seasonality and trend to be linear. \cite{hyndman2018forecasting}
 
-Vector Auto Regression
+\subsection{Vector Auto Regression}
 
 The first algorithm we implement, is an autoregressive model. This takes the first 5 lag positions and uses them as regressors, then using timeseries decomposition, it models the seasonality. This model is commonly used to forecast economic variables. 
 
-NeuralProphet
+\subsection{Auto Regressive Distributed Lag}
+
+ARDL models add to the above auto regressive model, however in addition to seasonality with is fit with a vector of indicator variables. and trend, in this case we are adding an explanatory variable of time and fitting the model to laggs of time.
+
+Although there are many forecasting models to choose from, there is not much research on when a given forecasting model outperforms another. Due to the data having strong weekly swings, we implement several models with an autoregressive terms.
+
+
+\subsection{XGBoost}
+
+XGBoost is an implementation of a tree boosting system. This uses decsision tree regression, and fits an ensamble of models fit to the data, then the residuals, then fits the residuals residuals. This ensamble of tree boosting is quite robust and is useful for a variety of different regression and classification tasks.
+
+\subsection{Facebook's Prophet}
+
+Facebook released a forecasting library designed specifically to meet the challenges of generating many high quality forecasts. The model prophet is a General Additive model, that consists of three functions, trend which fits an aperiodic logistic population growth model (we did not limit the growth, however that is a parameter), seasonality is a fouire series fit to the remaining seasonal component, and a holiday parameter which is a vector of user specified holliday periods, the holliday periods saw a drop in sales, however not enough to justify us specifying specific dates. 
+
+\subsection{NeuralProphet}
 
 NeuralProphet, is a forecasting library that expands on facebook prophet and includes an autoregressive term in the general additive model and uses neural networks to generate the autoregressive terms in the model.
 
-Seasonal Auto Regressive Distributed Lag
+\section{Performance}
 
-ARDL models add to the above auto regressive model, however in addition to seasonality with is fit with a vector of indicator variables. and trend, in this case we are adding an explanatory variable of time and fitting the model to laggs of time.
+\section{Kaggle Challenge}
 
 Feature Detection
 
@@ -92,6 +123,9 @@ Predict Which Day the Model Has the Smallest Error Given the Features
 Using different models, we tried knn, logistic regression, XGBoost, and an artificial neural network. 
 
 Due to the way kaggle scores, final Predictions could not be a weighted average of the results. We selected which was most likely to be the final.
+
+The project will use that clean data and input it into a feature detection algorythm which quantifies various features of each series. Then Takes the data and runs six different forecasting algorythms to generate a prediction for the remainder of the testing data. Then analyze forecasting errors. Then attempt to use machiene learning methods to select the best model for the data given features
+
 
 \section{Conclusions}
 

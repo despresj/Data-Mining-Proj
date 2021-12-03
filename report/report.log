@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.7.18)  2 DEC 2021 11:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.7.18)  3 DEC 2021 11:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8,8 +8,8 @@ LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18>
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
-(/usr/local/texlive/2021/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
 \c@part=\count179
 \c@section=\count180
@@ -61,192 +61,105 @@ Package babel Info: You haven't specified a language. I'll use 'nil'
 Language: nil 2021/03/24 3.56 Nil language
 \l@nil=\language88
 ))
+(/usr/local/texlive/2021/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2019/10/16 v2.13 Sectioning titles
+\ttl@box=\box47
+\beforetitleunit=\skip57
+\aftertitleunit=\skip58
+\ttl@plus=\dimen140
+\ttl@minus=\dimen141
+\ttl@toksa=\toks15
+\titlewidth=\dimen142
+\titlewidthlast=\dimen143
+\titlewidthfirst=\dimen144
+)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count190
-\l__pdf_internal_box=\box47
+\l__pdf_internal_box=\box48
 )
+
+LaTeX Warning: Unused global option(s):
+    [16pt].
+
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
 \c@maskedRefs=\count191
 
 
 Package apacite Warning: No suitable language definition file (nil.apc) found.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 29.
+(Font)              <12> on input line 38.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 29.
+(Font)              <8> on input line 38.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 38.
 
-Underfull \hbox (badness 1496) in paragraph at lines 35--36
-\T1/cmr/m/n/12 approach is riggerois, it does not scale.
+Underfull \hbox (badness 4303) in paragraph at lines 43--44
+\T1/cmr/m/n/10 Planning any organizational activities such as
  []
 
 
-Underfull \hbox (badness 2096) in paragraph at lines 35--36
-\T1/cmr/m/n/12 (m3). The goal of this project is to
- []
-
-
-Underfull \hbox (badness 1418) in paragraph at lines 35--36
-\T1/cmr/m/n/12 implement algorithms that generate high
- []
-
-
-Underfull \hbox (badness 2343) in paragraph at lines 39--40
-\T1/cmr/m/n/12 The data obtained for this project are
- []
-
-
-Underfull \hbox (badness 2221) in paragraph at lines 39--40
-\T1/cmr/m/n/12 we are participating. The competition
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 39--40
-\T1/cmr/m/n/12 challenges participants to forecast
- []
-
-
-Underfull \hbox (badness 6859) in paragraph at lines 39--40
-\T1/cmr/m/n/12 daily retail sales demand []\T1/cmr/m/it/12 Store Item
+Underfull \hbox (badness 1389) in paragraph at lines 43--44
+\T1/cmr/m/n/10 various activities. There are tremendous costs
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 41.
+(Font)              <7> on input line 51.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 41.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 41.
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--47
-[]\T1/cmr/m/n/12 EXPLOATORY PLOTS AND
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--47
-\T1/cmr/m/n/12 DESCRIPTIVE STATISTICS These
- []
-
-
-Underfull \hbox (badness 3229) in paragraph at lines 45--47
-\T1/cmr/m/n/12 data are highly seasonal with a slight
- []
-
-
-Underfull \hbox (badness 1253) in paragraph at lines 52--53
-\T1/cmr/m/n/12 which quantifies various features of each
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+(Font)              <5> on input line 51.
+[1{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Underfull \hbox (badness 5105) in paragraph at lines 58--59
-[]\T1/cmr/m/n/12 Although there are many forecasting
+Underfull \hbox (badness 2005) in paragraph at lines 86--87
+\T1/cmr/m/n/10 as the holt winters method. decomposes the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
-[]\T1/cmr/m/n/12 Exponential smoothing, or this is
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
+\T1/cmr/m/n/10 The first algorithm we implement, is an
  []
 
 
-Underfull \hbox (badness 6641) in paragraph at lines 62--63
-\T1/cmr/m/n/12 sometimes known as the holt winters
+Underfull \hbox (badness 1158) in paragraph at lines 105--106
+\T1/cmr/m/n/10 Facebook released a forecasting library designed
  []
 
 
-Underfull \hbox (badness 1661) in paragraph at lines 66--67
-\T1/cmr/m/n/12 for a variety of different regression and
- []
-
-
-Underfull \hbox (badness 1226) in paragraph at lines 70--71
-[]\T1/cmr/m/n/12 Facebook released a forecasting library
- []
-
-
-Underfull \hbox (badness 4316) in paragraph at lines 74--75
-\T1/cmr/m/n/12 then using timeseries decomposition, it
- []
-
-
-Underfull \hbox (badness 7151) in paragraph at lines 74--75
-\T1/cmr/m/n/12 models the seasonality. This model
- []
-
-
-Underfull \hbox (badness 2762) in paragraph at lines 74--75
-\T1/cmr/m/n/12 is commonly used to forecast economic
- []
-
-
-Underfull \hbox (badness 1205) in paragraph at lines 82--83
-[]\T1/cmr/m/n/12 ARDL models add to the above auto
- []
-
-
-Underfull \hbox (badness 1092) in paragraph at lines 82--83
-\T1/cmr/m/n/12 regressive model, however in addition to
- []
-
-
-Underfull \hbox (badness 1681) in paragraph at lines 82--83
-\T1/cmr/m/n/12 seasonality with is fit with a vector of
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
-[]\T1/cmr/m/n/12 There are many different shapes
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
-\T1/cmr/m/n/12 and patterns a timerseries plot can
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
-\T1/cmr/m/n/12 take. Tsfeatures []Montero-Manso,
- []
-
-
-Underfull \hbox (badness 5231) in paragraph at lines 86--87
-\T1/cmr/m/n/12 Athanasopoulos, Hyndman, & Talagala,
+Underfull \hbox (badness 1184) in paragraph at lines 105--106
+\T1/cmr/m/n/10 functions, trend which fits an aperiodic logistic
  []
 
 [2]
-Underfull \hbox (badness 1210) in paragraph at lines 88--89
-[]\T1/cmr/m/n/12 We ran this algorythm on each series
+Underfull \hbox (badness 1796) in paragraph at lines 117--118
+\T1/cmr/m/n/10 Manso, Athanasopoulos, Hyndman, & Talagala,
  []
 
 
-Underfull \hbox (badness 1953) in paragraph at lines 92--93
-[]\T1/cmr/m/n/12 Using different models, we tried knn,
+Underfull \hbox (badness 1052) in paragraph at lines 123--124
+[]\T1/cmr/m/n/10 Using different models, we tried knn, logistic
  []
 
 
-Underfull \hbox (badness 3386) in paragraph at lines 94--95
-[]\T1/cmr/m/n/12 Due to the way kaggle scores, final
+Underfull \hbox (badness 5119) in paragraph at lines 123--124
+\T1/cmr/m/n/10 regression, XGBoost, and an artificial neural
  []
 
 [3
@@ -256,29 +169,30 @@ Underfull \hbox (badness 3386) in paragraph at lines 94--95
 
 ] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 1904 strings out of 478994
- 26060 string characters out of 5858184
- 339477 words of memory out of 5000000
- 19424 multiletter control sequences out of 15000+600000
- 411612 words of font info for 45 fonts, out of 8000000 for 9000
+ 2200 strings out of 478994
+ 29841 string characters out of 5858184
+ 349147 words of memory out of 5000000
+ 19715 multiletter control sequences out of 15000+600000
+ 411474 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,7n,50p,882b,231s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,7n,50p,863b,231s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/
 cm-super-t1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1728.
-pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pf
-b></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb>
-</usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></
-usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on report.pdf (4 pages, 143895 bytes).
+cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1200.
+pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pf
+b></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+</usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></
+usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></us
+r/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
+Output written on report.pdf (4 pages, 160699 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
- 44 compressed objects within 1 object stream
+ 66 PDF objects out of 1000 (max. 8388607)
+ 47 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

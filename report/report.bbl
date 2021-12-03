@@ -1,6 +1,53 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Hyndman%
+\ \BBA {} Athanasopoulos%
+}{%
+Hyndman%
+\ \BBA {} Athanasopoulos%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+hyndman2018forecasting}
+\APACinsertmetastar {%
+hyndman2018forecasting}%
+\begin{APACrefauthors}%
+Hyndman, R\BPBI J.%
+\BCBT {}\ \BBA {} Athanasopoulos, G.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2018}.
+\newblock
+\APACrefbtitle {Forecasting: principles and practice} {Forecasting: principles
+  and practice}.
+\newblock
+\APACaddressPublisher{}{OTexts}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kaggle%
+}{%
+Kaggle%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+kaggle}
+\APACinsertmetastar {%
+kaggle}%
+\begin{APACrefauthors}%
+Kaggle.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+\APACrefbtitle {Store Item Demand Forecasting Challenge.} {Store item demand
+  forecasting challenge.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Montero-Manso%
 , Athanasopoulos%
 , Hyndman%
@@ -27,20 +74,6 @@ Montero-Manso, P.%
   Feature-based forecast model averaging}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{International Journal of Forecasting}{36}{1}{86--92}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-\APACcitebtitle {Store Item Demand Forecasting Challenge}}{%
-\APACcitebtitle {Store Item Demand Forecasting Challenge}}{%
-{\protect \APACyear {2018}}%
-}]{%
-kaggle}
-\APACinsertmetastar {%
-kaggle}%
-\APACrefbtitle {Store Item Demand Forecasting Challenge.} {Store item demand
-  forecasting challenge.}
-\newblock
-\APACrefYearMonthDay{2018}{}{}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
