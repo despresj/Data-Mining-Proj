@@ -139,7 +139,11 @@ filter(plot_df, date > test_date,
   scale_color_viridis_d(option = 2, begin = 0.4) + 
   geom_point(aes(y = pred_sales, color = model), size = 0.75) +
   theme(legend.position = "none") + 
-  facet_wrap(~model, ncol = 2)
+  scale_y_continuous(limits = c(0, 50)) + 
+  facet_wrap(~model, ncol = 2) +
+  theme(axis.title.x=element_blank(), legend.position = "none",
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
   
 my_saver("point_fcast_test_zoom")
 
