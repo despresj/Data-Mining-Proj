@@ -10,17 +10,7 @@ Due Dec 5
 
 ## TODO:
 
-- [X] ~Get Concluding Metrics~
-	- ~Review Code~
-	- ~Switch MAPE to SMAPE~
-
-- [ ] Finish Report
-
-- [ ] Video Record Slide Presentation
-	- Finish Slides in Each Section
-	
-
-
+- [ ] 2:00 Sunday Read Through and Submit.
 
 
 | member | role|
