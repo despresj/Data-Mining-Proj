@@ -17,7 +17,7 @@ plot_df <- bind_rows(errors, store_sales) %>%
     model == "exp_smooth" ~ "Seasonal Exponential Smoothing",
     model == "neural_prophet" ~ "Neural Prophet",
     model == "prophet" ~ "Prophet",
-    model == "xgb_preds" ~ "XGBoost Forecast",
+    model == "xgb_preds" ~ "XGBoost Forecast, Note: Used Default Parameters",
   ))
 
 my_saver <- function (name) {
@@ -95,12 +95,13 @@ my_saver("fifty_fcts")
 
 plots_fct <- base_plot +
   geom_point(
-    data = subset(plot_df),
-    aes(x = date, y = pred_sales), color = "blue", size = 0.25) +
+    data = filter(plot_df, store_item == "1-1"),
+    aes(x = date, y = pred_sales, color = model), alpha = 0.75, size = 0.25) +
   labs(title = "Daily Sales Point Forecasts") +
+  scale_color_viridis_d(option = 2, begin = 0.4) + 
   scale_y_continuous(limits = c(0, 50)) + 
-  facet_wrap(~model, ncol = 2)+
-  theme(axis.title.x=element_blank(),
+  facet_wrap(~model, ncol = 2) +
+  theme(axis.title.x=element_blank(), legend.position = "none",
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank())
 
@@ -109,9 +110,37 @@ plots_fct
 my_saver("point_fcast")
 
 plots_fct + 
-  geom_line(data = filter(plot_df, date > test_date), 
+  geom_point(
+    data = filter(plot_df, store_item == "1-1"),
+    aes(x = date, y = pred_sales, color = model), size = 0.25) +
+  geom_line(data = filter(plot_df, date > test_date,
+                          store_item == "1-1"), 
             aes(x = date, y = sales),
-                      color = "darkred", alpha = 0.5) +
+                      color = "#F0FFFF", alpha = 0.5) +
+
   labs(title = "Daily Sales Point Forecasts With Testing Set") 
   
 my_saver("point_fcast_test")
+
+filter(plot_df, date > test_date,
+       store_item == "1-1") %>% 
+  ggplot((aes(x = date, y = sales))) +
+  geom_line(color = "#F0FFFF", alpha = 0.5) + 
+  expand_limits(y=0) + 
+  scale_x_date(
+    date_breaks = "7 month",
+    date_labels = "%b '%y",
+    # limits = c(min(store_sales$date), max(store_sales$date))
+    ) +
+  labs(title = "Daily Sales Training Data Zoomed in On Forecast Horizion", 
+       subtitle = " ",
+       color = NULL,
+       x = NULL, y = "Units Sold of Product 1 / 500") + 
+  scale_color_viridis_d(option = 2, begin = 0.4) + 
+  geom_point(aes(y = pred_sales, color = model), size = 0.75) +
+  theme(legend.position = "none") + 
+  facet_wrap(~model, ncol = 2)
+  
+my_saver("point_fcast_test_zoom")
+
+beepr::beep()
