@@ -1,6 +1,28 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Hamilton%
+}{%
+Hamilton%
+}{%
+{\protect \APACyear {1994}}%
+}]{%
+hamilton1994}
+\APACinsertmetastar {%
+hamilton1994}%
+\begin{APACrefauthors}%
+Hamilton, J\BPBI D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{1994}.
+\newblock
+\APACrefbtitle {Time Series Analysis} {Time series analysis}.
+\newblock
+\APACaddressPublisher{}{Princeton University Press}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Hyndman%
 \ \BBA {} Athanasopoulos%
 }{%
@@ -24,6 +46,32 @@ Hyndman, R\BPBI J.%
   and practice}.
 \newblock
 \APACaddressPublisher{}{OTexts}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Hyndman%
+\ \BBA {} Koehler%
+}{%
+Hyndman%
+\ \BBA {} Koehler%
+}{%
+{\protect \APACyear {2006}}%
+}]{%
+hyndman2006another}
+\APACinsertmetastar {%
+hyndman2006another}%
+\begin{APACrefauthors}%
+Hyndman, R\BPBI J.%
+\BCBT {}\ \BBA {} Koehler, A\BPBI B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2006}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Another look at measures of forecast accuracy} {Another
+  look at measures of forecast accuracy}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{International journal of forecasting}{22}{4}{679--688}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -99,6 +147,32 @@ Taylor, S\BPBI J.%
 {\BBOQ}\APACrefatitle {Forecasting at scale} {Forecasting at scale}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{The American Statistician}{72}{1}{37--45}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Triebe%
+\ \protect \BOthers {.}}{%
+Triebe%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2021}}%
+}]{%
+triebe2021neuralprophet}
+\APACinsertmetastar {%
+triebe2021neuralprophet}%
+\begin{APACrefauthors}%
+Triebe, O.%
+, Hewamalage, H.%
+, Pilyugina, P.%
+, Laptev, N.%
+, Bergmeir, C.%
+\BCBL {}\ \BBA {} Rajagopal, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+\APACrefbtitle {NeuralProphet: Explainable Forecasting at Scale.}
+  {Neuralprophet: Explainable forecasting at scale.}
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}
