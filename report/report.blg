@@ -15,45 +15,46 @@ Database file #1: References.bib
 Warning--string name "kaggle" is undefined
 --line 51 of file References.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
-You've used 7 entries,
+Warning--`others' not consistent with 6th ed. of the APA Manual
+You've used 8 entries,
             6951 wiz_defined-function locations,
-            1307 strings with 11560 characters,
-and the built_in function-call counts, 11468 in all, are:
-= -- 1429
-> -- 112
-< -- 436
-+ -- 476
-- -- 16
-* -- 667
-:= -- 1931
-add.period$ -- 28
-call.type$ -- 7
-change.case$ -- 119
+            1313 strings with 11751 characters,
+and the built_in function-call counts, 13483 in all, are:
+= -- 1653
+> -- 139
+< -- 514
++ -- 566
+- -- 20
+* -- 800
+:= -- 2255
+add.period$ -- 31
+call.type$ -- 8
+change.case$ -- 136
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 341
-empty$ -- 515
-format.name$ -- 195
-if$ -- 2290
+cite$ -- 16
+duplicate$ -- 426
+empty$ -- 607
+format.name$ -- 253
+if$ -- 2669
 int.to.chr$ -- 0
-int.to.str$ -- 21
+int.to.str$ -- 24
 missing$ -- 0
-newline$ -- 173
-num.names$ -- 56
-pop$ -- 319
+newline$ -- 200
+num.names$ -- 64
+pop$ -- 353
 preamble$ -- 1
-purify$ -- 28
+purify$ -- 32
 quote$ -- 0
-skip$ -- 724
+skip$ -- 857
 stack$ -- 0
-substring$ -- 532
-swap$ -- 185
-text.length$ -- 15
+substring$ -- 630
+swap$ -- 235
+text.length$ -- 18
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 560
-warning$ -- 0
-while$ -- 62
+type$ -- 640
+warning$ -- 1
+while$ -- 81
 width$ -- 0
-write$ -- 215
-(There was 1 warning)
+write$ -- 253
+(There were 2 warnings)

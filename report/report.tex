@@ -33,8 +33,6 @@
     Joseph Sigler\\
 }
 
-\author{ Matthew Coghlin, Pelumi Dacosta, Joseph Despres, Aneesh Gahi, Joseph Sigler}
-
 \begin{document}
 
 \maketitle
@@ -45,7 +43,7 @@
 
 Planning organizational activities such as inventory planning, staffing decisions, budgeting, all depend on an expected future value. Forecasting the practice of using current data available to make a prediction about the future a variable at a time that has not yet happened. Decision makers in government, businesses, and non-profit organizations all require accurate and reliable forecasts when planning their various activities. There are tremendous costs associated with forecasts that are either too high or too low. Therefore, as practitioners, it is essential to minimize forecasting error. 
 
-Organizations are collecting more and more data as it becomes cheaper to store and more convenient to collect. This presents the opportunity to use more data driven forecasts and less judgment based forecasts. For accurate, reliable, and interpretable forecasts a time-series expert is generally required to carefully tune model parameters \cite{taylor2018forecasting}. Although, this approach is riggerois, it does not scale, any standard grocery store has more items to overwhelm anyone manually tuning models. Analysts could be asked to generate high quality forecasts for thousands, and even hundreds of thousands of series at a time. The goal of this project is to implement forecasting algorithms that generate high quality forecasts with minimal involvement, validate them with a training and testing partisan, and generate ensemble predictions made up of the various predictions.
+Organizations are collecting more and more data as it becomes cheaper to store and more convenient to collect. This presents the opportunity to use more data driven forecasts and less judgment based forecasts. For accurate, reliable, and interpretable forecasts a time-series expert is generally required to carefully tune model parameters \cite{taylor2018forecasting}. Although, this approach is riggerois, it does not scale, any standard grocery store has more items to overwhelm anyone manually tuning models. Analysts could be asked to generate high quality forecasts for thousands, and even hundreds of thousands of series at a time. The goal of this project is to implement forecasting algorithms that generate high quality forecasts with minimal involvement, validate them with a training and testing partisan, and generate ensemble predictions made up of the various predictions.\footnote{Find the code and data used for this project https://github.com/despresj/Data-Mining-Proj} 
 
 \section{Data}
 
@@ -75,6 +73,27 @@ Selecting algorithms to generate high quality forecasts will have strict require
 
 There are many forecasting models, however we selected models that have been shown to perform well in practice and fit our project requirements. We choose to test two categories of models. First, classical models that have been successfully implemented with years of good results. They are derrived with statistical methods and have strong theoretical justifications. Second, are newer machine learning based models. This is an open field and we are going to test different models and evaluate them strictly on their performance on testing data. 
 
+
+\begin{table*}[t] \centering 
+  \caption{Forecasting Model Performance} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} lrrr} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Model & Daily Forecast & Aggregated Weekly & Aggregated Monthly \\ 
+\hline \\[-1.8ex] 
+FB Prophet & $12.890$ & $7.330$ & $4.240$ \\ 
+ARDL & $16.830$ & $8.940$ & $4.480$ \\ 
+Neural Prophet & $18.440$ & $10.460$ & $7.610$ \\ 
+Exponential Smoothing & $19.310$ & $14.880$ & $13.540$ \\ 
+Autoregression & $23.930$ & $17.510$ & $16.250$ \\ 
+Xgboost & $30.350$ & $28.850$ & $28.430$ \\ 
+\hline \\[-1.8ex] 
+
+\footnotesize{Note: Measured in SMAPE see Equation 1}\\
+\end{tabular} 
+\end{table*} 
+
 \begin{enumerate}
 \item Seasonal Exponential Smoothing
 \item Vector Autoregression
@@ -101,21 +120,21 @@ Although there are many forecasting models to choose from, there is not much res
 
 \subsection{XGBoost}
 
-XGBoost is an implementation of a tree boosting system. This uses decsision tree regression, and fits an ensamble of models fit to the data, then the residuals, then fits the residuals residuals. This ensamble of tree boosting is quite robust and is useful for a variety of different regression and classification tasks.
+XGBoost is an implementation of a tree boosting system. This uses decsision tree regression, and fits an ensemble of models fit to the data, then the residuals, then fits the residuals residuals. This ensamble of tree boosting is quite robust and is useful for a variety of different regression and classification tasks\cite{chen2015xgboost}.
 
 \subsection{Facebook's Prophet}
 
-Facebook released a forecasting library designed specifically to meet the challenges of generating many high quality forecasts. The model prophet is a General Additive model, that consists of three functions, trend which fits an aperiodic logistic population growth model (we did not limit the growth, however that is a parameter), seasonality is a fouire series fit to the remaining seasonal component, and a holiday parameter which is a vector of user specified holliday periods, the holliday periods saw a drop in sales, however not enough to justify us specifying specific dates. 
+Facebook released a forecasting library designed specifically to meet the challenges of generating many high quality forecasts. The model prophet is a General Additive model, that consists of three functions, trend which fits a periodic logistic population growth model (we did not limit the growth, however that is a parameter), seasonality is a Fouire series fit to the remaining seasonal component, and a holiday parameter which is a vector of user specified holiday periods, the holliday periods saw a drop in sales, however not enough to justify us specifying specific dates\cite{taylor2018forecasting}. 
 
 \subsection{NeuralProphet}
 
-NeuralProphet, is a forecasting library that expands on facebook prophet and includes an autoregressive term in the general additive model and uses neural networks to generate the autoregressive terms in the model \cite{triebe2021neuralprophet}.
+NeuralProphet, is a forecasting library that expanding on Facebook's prophet. It does so by including an autoregressive term in the general additive model and uses neural networks to generate the autoregressive terms in the model \cite{triebe2021neuralprophet}.
 
 \section{Performance}
 
-Althoguh the Kaggle challenge is asking for a daily sales forecast, we are going to cover aggregated forecast performance because stakeholders are often far more concerned with weekly or monthly forecasts than daily. The selected forecasting models varied in performance quite dramatically. See Table 1 the the SMAPE of each model. First, we speak to the validity of each model given the performance on these testing data. Although there are 500 series, this is retail sales demand and it exhibits similar patterns. Of the selected models Facebook's prophet outperformed the rest at each level of aggregation. This is not surprising as it is percicely designed for the task of forecasting at scale \cite{taylor2018forecasting}. As the level of aggriagation increases, we observe lower errors. 
+Although the Kaggle challenge we are participaing in is asking for a daily sales forecast, we are going to cover aggregated forecast performance because stakeholders are often far more concerned with weekly or monthly forecasts than daily. The selected forecasting models varied in performance quite dramatically. See Table 1 the the SMAPE of each model. First, we speak to the validity of each model given the performance on these testing data. Although there are 500 series, this is retail sales demand and it exhibits similar patterns. Of the selected models Facebook's prophet outperformed the rest at each level of aggregation. This is not surprising as it is percicely designed for the task of forecasting at scale \cite{taylor2018forecasting}. As the level of aggregation increases, we observe lower errors. 
 
-An advantage od the large volumne of forecasts gives a pretty good idea of the level of performance to expect from these models. Table 2 contain histograms of the testing set predictions. With six forecasting models forecasting a testing set fo 
+An advantage of forecasting at this scale is that it shows the level of model performance to expect from each model. See histograms of testing set errors in Figure 2. Notice, XGBoost was consistently forecasting lower than the actual value. Where neural prophet was overforecsating. There may be applications where over or underforecasting may be prefered, however we are looking for the most accurate models would prefer those adjustment to be made heuristically. 
 
 \begin{figure}[!htb]
 	\center{\includegraphics[width=\columnwidth]
@@ -123,48 +142,60 @@ An advantage od the large volumne of forecasts gives a pretty good idea of the l
 	\caption{\label{fig:my-label} Distribution of forecasting errors}
 \end{figure}
 
+Table 2 contains descriptive statistics of the each model's performance. Note that the median error of prophet was much lower than in all the other models except for Exponential smoothing. Another consideration is the standard deviation of forecasting errors. This is an important consideration depending on the application. Low standard deviation in forecasting error is highly desirable. The advantage.
 
+Of the models tested, Prophet had the best performance in SMAPE, had the median near zero, and the lowest standard deviation of error. 
 
-\begin{table*}[t] 
+\begin{table*}[ht] 
 \centering 
-\caption{Testing Set Forecasting Model Performance} 
-\begin{tabular}{@{\extracolsep{5pt}} lccc} 
+\caption{Descriptive Statistics} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} lrrrr} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
-Model & Daily Forecast & Aggregated Weekly & Aggregated Monthly \\ 
+Model & Median & Standard Deviation & 95th Percentile & 5th Percentile \\ 
 \hline \\[-1.8ex] 
-Facebook's Prophet & $12.89$ & $7.33$ & $4.24$ \\ 
-ARDL & $16.83$ & $8.94$ & $4.48$ \\ 
-Neural Prophet & $18.44$ & $10.46$ & $7.61$ \\ 
-Exponential Smoothing & $19.31$ & $14.88$ & $13.54$ \\ 
-Autoregression & $23.93$ & $17.51$ & $16.25$ \\ 
-Xgboost & $30.35$ & $28.85$ & $28.43$ \\ 
+AR Distributed Lag & $$-$2.861$ & $10.505$ & $12.472$ & $$-$21.776$ \\ 
+Exponential Smoothing & $0.704$ & $14.098$ & $26.306$ & $$-$20.514$ \\ 
+Neural Prophet & $6.863$ & $10.874$ & $27.095$ & $$-$8.262$ \\ 
+Prophet & $0.731$ & $8.660$ & $14.355$ & $$-$13.956$ \\ 
+Vector Autoreg & $$-$7.500$ & $14.374$ & $12.627$ & $$-$34.667$ \\ 
+XGBoost Forecast & $$-$11.973$ & $12.889$ & $3.153$ & $$-$38.347$ \\ 
 \hline \\[-1.8ex] 
-
-\footnotesize{Measured SMAPE in See Equation 1}\\
+\footnotesize{}\\
 \end{tabular} 
-\end{table*}
-
-
+\end{table*} 
 
 \section{Kaggle Challenge}
 
-Feature Detection
+The challenge is simple generate the best daily forecasts meaured by SMAPE. Since we are not limited in entries we are going to attempt a variety of methods. In this section we will discuss various attempts at this challenge as well as the result. The challenge has passed, so we have access to the leaderboards. The top score is a SMAPE of 12.07 \cite{kaggle}. Therefore, we will compare the models the strategies to that. 
 
-There are many different shapes and patterns a timerseries plot can take. Tsfeatures \cite{montero2020fforma} quantifies different features such as the number of times it crosses the median, degree of seasonality, the number of flat spots, entropy, and many more. 
+\begin{enumerate}
+\item Weight an Average Based on Features
+\item Just Use Prophet
+\item Ensamble of the Top Three Models
+\end{enumerate}
 
-We ran this algorythm on each series collecting 30 quantified features. The central question of this study is to determine if we can determine which forecast will perfrom the best given these features. 
+\subsection{Weighted Average}
 
-Predict Which Day the Model Has the Smallest Error Given the Features
+Improving current models can prove very valueable. Therefore, we will attempt some machine learning methods to combine the models. The goal is to use machine learning to predict when a given forecast. Therefore, we will employ a feature detection algorythm to classify the best model. There are many different shapes and patterns a timerseries plot can take. Seasonality, flatpoints, noise, and many other are quantifed in the Tsfeatures package \cite{montero2020fforma}. We ran this algorythm on each series collecting 30 quantified features. The central question of this study is to determine if we can determine which forecast will perfrom the best given these features. 
 
-Using different models, we tried knn, logistic regression, XGBoost, and an artificial neural network. 
+Using different models, we tried KNN, logistic regression, XGBoost, and an artificial neural network. The algortyms were able to select the best with an accuracy of 0.28.
 
-Due to the way kaggle scores, final Predictions could not be a weighted average of the results. We selected which was most likely to be the final.
+Of the top score on kaggle this method wildly underperformed scoring an SMAPE of 20.74. This is worse than nearly all the models performance on testing data. Since we do not have acess to the testing data, we cannot be sure what went wrong. Our suspecion is that combining all the forecasts in a weighted average all smoothed out all the noise and was not able to capture daily swings.
 
+\subsection{Just Use Prophet}
+
+After that, there is the most simple submission. That is to simply use the top performing model and submit the result. The Prophet model scored a SMAPE of 14.10. However, the deviation from the testing set performance is a cause for concern. It is a full two points worse than the testing set. We speculate that is the result of the challenge data starts at starting at the begining of the year. This is the lowest point in the seasonality for these products. Regardless, this method should be concidered given the simplicity of just one model. 
+
+\subsection{Ensamble of the Top Three Models}
+
+Given a weak performance of the weighted average and the strong performance of the Prophet model, we investigate one more approach. This method is going to use a selectied ensamble of ARDL, Prophet, and Neural Prophet. We will use the probability weights from machine learnign to predict the most accurate model for each given day. This method recieved a score fo 14.58. This is not as accurate as just using Propeht. Additionally, it is far more complicated. 
 
 \section{Conclusions}
 
-The models ensamble was able to outperform each of the individual. In practice, it is likely that we are too use these methods to forecast a months sales. this would be aggrigated.
+The best result is seen using Facebook's Prophet forecasting model, which is developed specifically the the task of forecasting at a scale far beyond even this task. 
+
 
 \clearpage
 \onecolumn

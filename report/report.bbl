@@ -1,6 +1,34 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Chen%
+\ \protect \BOthers {.}}{%
+Chen%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+chen2015xgboost}
+\APACinsertmetastar {%
+chen2015xgboost}%
+\begin{APACrefauthors}%
+Chen, T.%
+, He, T.%
+, Benesty, M.%
+, Khotilovich, V.%
+, Tang, Y.%
+, Cho, H.%
+\BCBL {}\ \BOthersPeriod {.}\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Xgboost: extreme gradient boosting} {Xgboost: extreme
+  gradient boosting}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{R package version 0.4-2}{1}{4}{1--4}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Hamilton%
 }{%
 Hamilton%

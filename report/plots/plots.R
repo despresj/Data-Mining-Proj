@@ -6,15 +6,17 @@ store_sales %>%
   filter(store_item %in% c("1-1", "1-2","1-3", "1-4")) %>% 
   ggplot(aes(x = date, y = sales)) +
   geom_line() + 
-  facet_wrap(~store_item, scales = "free", nrow = 4) +
+  stat_smooth(span = 0.15, method = "loess", color = "grey55", se = FALSE) + 
+  facet_wrap(~store_item, scales = "free", nrow = 2) +
   annotate("rect", 
            xmin = lubridate::ymd("2016-07-01"),
            xmax = lubridate::ymd("2018-01-01"),
            ymin = 0, ymax = Inf,
            alpha = .2) + 
   labs(title = NULL, x = NULL, y = "Units Sold",
+       caption = "The task is to generate high quality forecasts for 500 series sililar to these"
        subtitle = "Testing Set") + 
-  theme(plot.subtitle = element_text(hjust = 0.85, face= "italic"))
+  theme(plot.subtitle = element_text(hjust = 1, face= "italic"))
 
 ggsave("report/plots/item_sales.png", width = 8, height = 6)
 
@@ -54,3 +56,16 @@ error_df %>%
   labs(x = "Absolute Error", y = NULL)
 
 ggsave("report/plots/errors.png", width = 8, height = 8)
+
+
+error_df %>% 
+  group_by(model) %>% 
+  summarise(median = median(abs_error),
+            std = sd(abs_error),
+            x_05 = quantile(abs_error, 0.05),
+            x_95 = quantile(abs_error, 0.95),
+            
+            )  %>% 
+  as.data.frame() %>% 
+  stargazer::stargazer(summary=FALSE, rownames=FALSE) 
+  
