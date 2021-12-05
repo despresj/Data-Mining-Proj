@@ -35,6 +35,8 @@
 
 \begin{document}
 
+% \tableofcontents
+
 \maketitle
 \bibliographystyle{apacite}
 
@@ -197,9 +199,11 @@ Given a weak performance of the weighted average and the strong performance of t
 
 \section{Conclusions}
 
-The best forecasting results were using using Facebook's Prophet forecasting model, which is developed specifically the task of forecasting at a scale far beyond even this project. We did not find a good way of combinging the forecasts into a more accurate model. Perharps with more data on exogenous factors we could combine them using more data.  
+The best forecasting results were using using Facebook's Prophet forecasting model, which is developed specifically for the task of forecasting at a scale far beyond even this project. We did not find a good way of combinging the forecasts into a more accurate model. Additional studies with more data on exogenous factors could be used to combine forecasting models. Additionally, optimizing forecasting accuracy for weekly or monthly would likely produce more accurate results. 
 
-Additionally, consider that the data set used is unusually clean with highly pronounced seasonality. Thererofre, XGboost and Neural Prophet should not be discarded based on this project. It may, depend on the forecasting application make some sence to do parameter tuning depending in the gain of accuracy it give.
+
+Additionally, consider that the data set used is unusually clean with highly pronounced seasonality. Therefore, XGboost and Neural Prophet should not be discarded based on this project. It may depend on the forecasting application make some sence to do some parameter tuning depending in hopes of gaining some accuracy.
+
 
 \clearpage
 \onecolumn

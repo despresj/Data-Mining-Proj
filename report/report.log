@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.7.18)  5 DEC 2021 16:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.7.18)  5 DEC 2021 17:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -193,46 +193,46 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 38.
+(Font)              <12> on input line 40.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 38.
+(Font)              <8> on input line 40.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 38.
+(Font)              <6> on input line 40.
 
-Underfull \hbox (badness 1325) in paragraph at lines 46--47
+Underfull \hbox (badness 1325) in paragraph at lines 48--49
 []\T1/cmr/m/n/10 As data becomes cheaper to store and more
  []
 
 
-Underfull \hbox (badness 6876) in paragraph at lines 46--47
+Underfull \hbox (badness 6876) in paragraph at lines 48--49
 \T1/cmr/m/n/10 convenient to collect, organizations have the
  []
 
 
-Underfull \hbox (badness 1337) in paragraph at lines 46--47
+Underfull \hbox (badness 1337) in paragraph at lines 48--49
 \T1/cmr/m/n/10 in the past, a time-series expert was generally
  []
 
 
-Underfull \hbox (badness 1783) in paragraph at lines 46--47
+Underfull \hbox (badness 1783) in paragraph at lines 48--49
 \T1/cmr/m/n/10 is rigorous, it does not scale. Any standard
  []
 
 
-Underfull \hbox (badness 2326) in paragraph at lines 46--47
+Underfull \hbox (badness 2326) in paragraph at lines 48--49
 \T1/cmr/m/n/10 forecasts for thousands, and even hundreds of
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 48.
+(Font)              <7> on input line 50.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 48.
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
-8.
+(Font)              <5> on input line 50.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 5
+0.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-Underfull \hbox (badness 7944) in paragraph at lines 48--48
+Underfull \hbox (badness 7944) in paragraph at lines 50--50
 [][]\T1/cmr/m/n/8 Find the code and data used for this project
  []
 
@@ -246,80 +246,80 @@ Underfull \vbox (badness 1454) has occurred while \output is active []
 <plots/item_sales.png, id=20, 2409.0pt x 1806.75pt>
 File: plots/item_sales.png Graphic file (type png)
 <use plots/item_sales.png>
-Package pdftex.def Info: plots/item_sales.png  used on input line 66.
+Package pdftex.def Info: plots/item_sales.png  used on input line 68.
 (pdftex.def)             Requested size: 229.5pt x 172.1117pt.
 
-Underfull \hbox (badness 1478) in paragraph at lines 72--73
+Underfull \hbox (badness 1478) in paragraph at lines 74--75
 \T1/cmr/m/n/10 forecasts will have strictly required to be fast,
  []
 
 
-Underfull \hbox (badness 3815) in paragraph at lines 76--77
+Underfull \hbox (badness 3815) in paragraph at lines 78--79
 \T1/cmr/m/n/10 We choose to test two categories of models.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--111
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 \T1/cmr/m/n/10 The Seasonal Exponential smoothing model,
  []
 
 
-Underfull \hbox (badness 2310) in paragraph at lines 110--111
+Underfull \hbox (badness 2310) in paragraph at lines 112--113
 \T1/cmr/m/n/10 sometimes known as the Holt-Winters method,
  []
 
 
-Underfull \hbox (badness 1331) in paragraph at lines 110--111
+Underfull \hbox (badness 1331) in paragraph at lines 112--113
 \T1/cmr/m/n/10 Linear Seasonality, Linear Trend, and Gaussian
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 114--115
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
 \T1/cmr/m/n/10 The first algorithm we implement, is an
  []
 
 
-Underfull \hbox (badness 2698) in paragraph at lines 114--115
+Underfull \hbox (badness 2698) in paragraph at lines 116--117
 \T1/cmr/m/n/10 autoregressive model. This takes the first 5
  []
 
 
-Underfull \hbox (badness 4403) in paragraph at lines 114--115
+Underfull \hbox (badness 4403) in paragraph at lines 116--117
 \T1/cmr/m/n/10 using timeseries decomposition, it models the
  []
 
 
-Underfull \hbox (badness 6094) in paragraph at lines 114--115
+Underfull \hbox (badness 6094) in paragraph at lines 116--117
 \T1/cmr/m/n/10 seasonality[]Hamilton, 1994). This model is
  []
 
 [2 <./plots/item_sales.png>]
-Underfull \hbox (badness 1158) in paragraph at lines 129--130
+Underfull \hbox (badness 1158) in paragraph at lines 131--132
 \T1/cmr/m/n/10 Facebook released a forecasting library designed
  []
 
 
-Underfull \hbox (badness 2269) in paragraph at lines 129--130
+Underfull \hbox (badness 2269) in paragraph at lines 131--132
 \T1/cmr/m/n/10 is a General Additive model, that consists of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 \T1/cmr/m/n/10 NeuralProphet, is a forecasting library that
  []
 
 
-Underfull \hbox (badness 1527) in paragraph at lines 133--134
+Underfull \hbox (badness 1527) in paragraph at lines 135--136
 \T1/cmr/m/n/10 expanding on Facebook's prophet. It does so
  []
 
 
-Underfull \hbox (badness 1430) in paragraph at lines 157--158
+Underfull \hbox (badness 1430) in paragraph at lines 159--160
 \T1/cmr/m/n/10 stakeholders are often far more concerned with
  []
 
 
-Underfull \hbox (badness 1975) in paragraph at lines 157--158
+Underfull \hbox (badness 1975) in paragraph at lines 159--160
 \T1/cmr/m/n/10 weekly or monthly forecasts than daily. The
  []
 
@@ -327,25 +327,25 @@ Underfull \hbox (badness 1975) in paragraph at lines 157--158
 <plots/errors.png, id=30, 2409.0pt x 2409.0pt>
 File: plots/errors.png Graphic file (type png)
 <use plots/errors.png>
-Package pdftex.def Info: plots/errors.png  used on input line 163.
+Package pdftex.def Info: plots/errors.png  used on input line 165.
 (pdftex.def)             Requested size: 229.5pt x 229.48227pt.
 
-Underfull \hbox (badness 1371) in paragraph at lines 169--170
+Underfull \hbox (badness 1371) in paragraph at lines 171--172
 []\T1/cmr/m/n/10 Of the models tested, Prophet had the best
  []
 
 
-Underfull \hbox (badness 1231) in paragraph at lines 184--185
+Underfull \hbox (badness 1231) in paragraph at lines 186--187
 \T1/cmr/m/n/10 methods to combine the models. The goal is
  []
 
 
-Underfull \hbox (badness 1484) in paragraph at lines 184--185
+Underfull \hbox (badness 1484) in paragraph at lines 186--187
 \T1/cmr/m/n/10 forecast. Therefore, we will employ a feature
  []
 
 
-Underfull \hbox (badness 3343) in paragraph at lines 184--185
+Underfull \hbox (badness 3343) in paragraph at lines 186--187
 []\T1/cmr/m/n/10 Montero-Manso, Athanasopoulos, Hyndman, &
  []
 
@@ -353,7 +353,7 @@ Underfull \hbox (badness 3343) in paragraph at lines 184--185
 Underfull \vbox (badness 1776) has occurred while \output is active []
 
  [4 <./plots/errors.png>]
-Underfull \hbox (badness 5119) in paragraph at lines 186--187
+Underfull \hbox (badness 5119) in paragraph at lines 188--189
 \T1/cmr/m/n/10 regression, XGBoost, and an artificial neural
  []
 
@@ -361,12 +361,12 @@ Underfull \hbox (badness 5119) in paragraph at lines 186--187
 Underfull \vbox (badness 5954) has occurred while \output is active []
 
 
-Underfull \hbox (badness 3690) in paragraph at lines 200--201
+Underfull \hbox (badness 3690) in paragraph at lines 202--203
 \T1/cmr/m/n/10 The best forecasting results were using using
  []
 
 
-Underfull \hbox (badness 1552) in paragraph at lines 200--201
+Underfull \hbox (badness 1552) in paragraph at lines 202--203
 \T1/cmr/m/n/10 Facebook's Prophet forecasting model, which is
  []
 
@@ -403,7 +403,7 @@ e/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/
 /texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2021/t
 exmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2021/tex
 mf-dist/fonts/type1/public/cm-super/sftt0800.pfb>
-Output written on report.pdf (6 pages, 792210 bytes).
+Output written on report.pdf (6 pages, 792282 bytes).
 PDF statistics:
  93 PDF objects out of 1000 (max. 8388607)
  64 compressed objects within 1 object stream
