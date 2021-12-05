@@ -41,9 +41,11 @@
 
 \section{Introduction}
 
-Planning organizational activities such as inventory planning, staffing decisions, budgeting, all depend on an expected future value. Forecasting the practice of using current data available to make a prediction about the future a variable at a time that has not yet happened. Decision makers in government, businesses, and non-profit organizations all require accurate and reliable forecasts when planning their various activities. There are tremendous costs associated with forecasts that are either too high or too low. Therefore, as practitioners, it is essential to minimize forecasting error. 
+Organizations planning for the future need a way of estimating the future value of many things. From estimating retail demand to plan inventory such as inventory, to customer arrivals for staffing decisions, and estimating input costs for budgeting, all depend on forecasts. Forecasting is the practice of using current data available to estimate the value of a future variable at a time that has not yet happened. Decision makers in government, businesses, and non-profit organizations all require accurate and reliable forecasts. However, there are tremendous costs associated with forecasts that are either too high or too low. This could mean a store running out of inventory, unable to checkout enough shoppers, or be left with rotting produce. Therefore, it is essential to minimize forecasting error. However, there is a growing number of items to forecast and manually forecasting each series will not scales. Therefore, this project implements methods for generating high quality, reliable forecasts for many series. 
 
-Organizations are collecting more and more data as it becomes cheaper to store and more convenient to collect. This presents the opportunity to use more data driven forecasts and less judgment based forecasts. For accurate, reliable, and interpretable forecasts a time-series expert is generally required to carefully tune model parameters \cite{taylor2018forecasting}. Although, this approach is riggerois, it does not scale, any standard grocery store has more items to overwhelm anyone manually tuning models. Analysts could be asked to generate high quality forecasts for thousands, and even hundreds of thousands of series at a time. The goal of this project is to implement forecasting algorithms that generate high quality forecasts with minimal involvement, validate them with a training and testing partisan, and generate ensemble predictions made up of the various predictions.\footnote{Find the code and data used for this project https://github.com/despresj/Data-Mining-Proj} 
+As data becomes cheaper to store and more convenient to collect, organizations have the opportunity to get better data driven forecasts. To obtain accurate, reliable, and interpret able forecasts in the past, a time-series expert was generally required to carefully tune model parameters \cite{taylor2018forecasting} and make judgments on which models to implement. Although, this approach is rigorous, it does not scale. Any standard grocery store has enough items to overwhelm anyone manually tuning and selecting forecasting models. Analysts could be asked to generate high quality forecasts for thousands, and even hundreds of thousands of series at a time. The goal of this project is to implement forecasting algorithms that generate high quality forecasts with minimal involvement, validate them with a training and testing partisan, and generate ensemble predictions made up of the various forecasts.
+
+We begin with a discussion of the data and metrics used to evaluate forecasts. Then we specify the requirements for the models to be used for this task. Then we briefly explain the intuition of each model and some reasons for selecting them. Then we discuss the models performance on testing data. After that we discuss our Kaggle challenge and the various approaches we took when making submissions. After that, we conclude with some remarks on the process and how these applications could be used in industry.\footnote{Find the code and data used for this project \url{https://github.com/despresj/Data-Mining-Proj}  } 
 
 \section{Data}
 
@@ -53,11 +55,11 @@ The data obtained for this project are provided as part of a Kaggle challenge wh
 \textrm{SMAPE}={\frac {100\%}{h}}\sum _{t=1}^{h}{\frac {\left|\hat{y}_t-y_t\right|}{(|y_t|+|\hat{y}_t|)/2}}.
 \end{equation}
 
-where $y_t$ is the actual value, $\hat{y}_t$ is the forecast, and $h$ is the forecast horizon. This metric is used the account for the different magnidudes of many series to give a fair comparasent. Should you simply use Mean Absolute Percentage Error, there is an asymmatry as forecasting low is penalized more than forecasting high as well as errors in a series with a lower number of units \cite{hyndman2006another}.
+Where $y_t$ is the actual value, $\hat{y}_t$ is the point forecast, and $h$ is the forecast horizon. This metric is used the account for the different magnitudes of many series to give a fair comparison. Should one use Mean Absolute Percentage Error, there is an asymmetry as forecasting low is penalized more than forecasting high as well as errors in a series with a lower number of units \cite{hyndman2006another}.
 
-The data required very little preparation. There were several data points that were zero we switched to a one because the one of the algorithms did not support 0 values. After that we combined the stores and items into one string column to avoid nesting loops when iteration over stores and items. Notice Figure 1 shows data are highly seasonal with a slight upward trend and substantial noise.
+The data require very little preparation. There were several data points that were zero which we switched to one because one of the algorithms did not support 0 values. After that we combined the stores and items into one string column to avoid nesting loops when iteration over stores and items. Figure 1 contains a small subset of the series. This subset of the data are highly seasonal with a slight upward trend and Gaussian noise.
 
-After that, we separated into training and testing partisans to get an idea of what kind of model performance we can expect. We selected the first 1279 data points or 80\% training set of our time-series. Then we separated the remainder of the data as a testing set. This prepares us for running the experiments.
+After that, we separated data into training and testing partisans to compare model performance. We selected the first 1,279 data points or 80\% training set of our time-series. Then we use the remainder of the data as a testing set. This prepares us to experiment with the models and compare performance. 
 
 \begin{figure}[!htb]
 	\center{\includegraphics[width=\columnwidth]
@@ -67,7 +69,7 @@ After that, we separated into training and testing partisans to get an idea of w
 
 \section{Requirements}
 
-Selecting algorithms to generate high quality forecasts will have strict requirements. These need to be fast, accurate, and interpretable. To be fast, the models must have minimal parameters to tune or be accurate with some specified default parameters. Grid searching model parameters over many series is not feasible. If these alogrythms are fast, many can be ran. Therefore, you can have a very good idea of what kind of performance to expect. Due to the high costs associated with forecasting errors, these models must be interpretable in the event a steakholder is undertain about the model. For obvious reasons, stakeholders should not be asked to place their faith in black-box forecasting models.
+The algorithms we select to generate high quality forecasts will have strictly required to be fast, accurate, and interpretable. To be fast, the models must have minimal hyper parameters to tune or be accurate with some specified default parameters. Grid searching model parameters over many series is not feasible. If these alogrythms are fast, they can be ran on a wide variety of timeseries. That gives analysis and stakeholders a very good idea of what kind of performance to expect. Due to the high costs associated with forecasting errors, these models must be interpretable in the event a steakholder has concerns with the output of a model. 
 
 \section{Models}
 
@@ -131,21 +133,6 @@ Facebook released a forecasting library designed specifically to meet the challe
 NeuralProphet, is a forecasting library that expanding on Facebook's prophet. It does so by including an autoregressive term in the general additive model and uses neural networks to generate the autoregressive terms in the model \cite{triebe2021neuralprophet}.
 
 \section{Performance}
-
-Although the Kaggle challenge we are participaing in is asking for a daily sales forecast, we are going to cover aggregated forecast performance because stakeholders are often far more concerned with weekly or monthly forecasts than daily. The selected forecasting models varied in performance quite dramatically. See Table 1 the the SMAPE of each model. First, we speak to the validity of each model given the performance on these testing data. Although there are 500 series, this is retail sales demand and it exhibits similar patterns. Of the selected models Facebook's prophet outperformed the rest at each level of aggregation. This is not surprising as it is percicely designed for the task of forecasting at scale \cite{taylor2018forecasting}. As the level of aggregation increases, we observe lower errors. 
-
-An advantage of forecasting at this scale is that it shows the level of model performance to expect from each model. See histograms of testing set errors in Figure 2. Notice, XGBoost was consistently forecasting lower than the actual value. Where neural prophet was overforecsating. There may be applications where over or underforecasting may be prefered, however we are looking for the most accurate models would prefer those adjustment to be made heuristically. 
-
-\begin{figure}[!htb]
-	\center{\includegraphics[width=\columnwidth]
-        {plots/errors.png}}
-	\caption{\label{fig:my-label} Distribution of forecasting errors}
-\end{figure}
-
-Table 2 contains descriptive statistics of the each model's performance. Note that the median error of prophet was much lower than in all the other models except for Exponential smoothing. Another consideration is the standard deviation of forecasting errors. This is an important consideration depending on the application. Low standard deviation in forecasting error is highly desirable. The advantage.
-
-Of the models tested, Prophet had the best performance in SMAPE, had the median near zero, and the lowest standard deviation of error. 
-
 \begin{table*}[ht] 
 \centering 
 \caption{Descriptive Statistics} 
@@ -165,6 +152,22 @@ XGBoost Forecast & $$-$11.973$ & $12.889$ & $3.153$ & $$-$38.347$ \\
 \footnotesize{}\\
 \end{tabular} 
 \end{table*} 
+
+
+Although the Kaggle challenge we are participaing in is asking for a daily sales forecast, we are going to cover aggregated forecast performance because stakeholders are often far more concerned with weekly or monthly forecasts than daily. The selected forecasting models varied in performance quite dramatically. See Table 1 the the SMAPE of each model. First, we speak to the validity of each model given the performance on these testing data. Although there are 500 series, this is retail sales demand and it exhibits similar patterns. Of the selected models Facebook's prophet outperformed the rest at each level of aggregation. This is not surprising as it is percicely designed for the task of forecasting at scale \cite{taylor2018forecasting}. As the level of aggregation increases, we observe lower errors. 
+
+An advantage of forecasting at this scale is that it shows the level of model performance to expect from each model. See histograms of testing set errors in Figure 2. Notice, XGBoost was consistently forecasting lower than the actual value. Where neural prophet was overforecsating. There may be applications where over or underforecasting may be prefered, however we are looking for the most accurate models would prefer those adjustment to be made heuristically. 
+
+\begin{figure}[!htb]
+	\center{\includegraphics[width=\columnwidth]
+        {plots/errors.png}}
+	\caption{\label{fig:my-label} Distribution of forecasting errors}
+\end{figure}
+
+Table 2 contains descriptive statistics of the each model's performance. Note that the median error of prophet was much lower than in all the other models except for Exponential smoothing. Another consideration is the standard deviation of forecasting errors. This is an important consideration depending on the application. Low standard deviation in forecasting error is highly desirable. The advantage.
+
+Of the models tested, Prophet had the best performance in SMAPE, had the median near zero, and the lowest standard deviation of error. 
+
 
 \section{Kaggle Challenge}
 
@@ -194,8 +197,9 @@ Given a weak performance of the weighted average and the strong performance of t
 
 \section{Conclusions}
 
-The best result is seen using Facebook's Prophet forecasting model, which is developed specifically the the task of forecasting at a scale far beyond even this task. 
+The best forecasting results were using using Facebook's Prophet forecasting model, which is developed specifically the task of forecasting at a scale far beyond even this project. We did not find a good way of combinging the forecasts into a more accurate model. Perharps with more data on exogenous factors we could combine them using more data.  
 
+Additionally, consider that the data set used is unusually clean with highly pronounced seasonality. Thererofre, XGboost and Neural Prophet should not be discarded based on this project. It may, depend on the forecasting application make some sence to do parameter tuning depending in the gain of accuracy it give.
 
 \clearpage
 \onecolumn
