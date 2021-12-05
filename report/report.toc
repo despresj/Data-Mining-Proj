@@ -1,18 +1,17 @@
 \babel@toc {nil}{}
-\contentsline {section}{\numberline {}Introduction}{2}{}%
-\contentsline {section}{\numberline {}Data}{2}{}%
-\contentsline {section}{\numberline {}Requirements}{4}{}%
-\contentsline {section}{\numberline {}Models}{4}{}%
-\contentsline {subsection}{\numberline {1}Seasonal Exponential Smoothing}{5}{}%
-\contentsline {subsection}{\numberline {2}Vector Auto Regression}{5}{}%
-\contentsline {subsection}{\numberline {3}Auto Regressive Distributed Lag}{5}{}%
-\contentsline {subsection}{\numberline {4}XGBoost}{5}{}%
-\contentsline {subsection}{\numberline {5}Facebook's Prophet}{5}{}%
-\contentsline {subsection}{\numberline {6}NeuralProphet}{5}{}%
-\contentsline {section}{\numberline {}Performance}{6}{}%
-\contentsline {section}{\numberline {}Kaggle Challenge}{6}{}%
-\contentsline {subsection}{\numberline {1}Weighted Average}{8}{}%
-\contentsline {subsection}{\numberline {2}Just Use Prophet}{8}{}%
-\contentsline {subsection}{\numberline {3}Ensamble of the Top Three Models}{8}{}%
-\contentsline {section}{\numberline {}Conclusions}{8}{}%
-\contentsline {section}{References}{9}{}%
+\contentsline {section}{\numberline {}Introduction}{1}{}%
+\contentsline {section}{\numberline {}Data}{1}{}%
+\contentsline {section}{\numberline {}Requirements}{2}{}%
+\contentsline {section}{\numberline {}Models}{2}{}%
+\contentsline {subsection}{\numberline {1}Seasonal Vector Auto Regression}{2}{}%
+\contentsline {subsection}{\numberline {2}Auto Regressive Distributed Lag}{2}{}%
+\contentsline {subsection}{\numberline {3}XGBoost}{3}{}%
+\contentsline {subsection}{\numberline {4}Facebook's Prophet}{3}{}%
+\contentsline {subsection}{\numberline {5}NeuralProphet}{3}{}%
+\contentsline {section}{\numberline {}Performance}{3}{}%
+\contentsline {section}{\numberline {}Kaggle Challenge}{4}{}%
+\contentsline {subsection}{\numberline {1}Weighted Average}{4}{}%
+\contentsline {subsection}{\numberline {2}Just Use Prophet}{5}{}%
+\contentsline {subsection}{\numberline {3}Ensemble of the Top Three Models}{5}{}%
+\contentsline {section}{\numberline {}Conclusions}{5}{}%
+\contentsline {section}{References}{6}{}%
