@@ -14,7 +14,7 @@ store_sales %>%
            ymin = 0, ymax = Inf,
            alpha = .2) + 
   labs(title = NULL, x = NULL, y = "Units Sold",
-       caption = "The task is to generate high quality forecasts for 500 series sililar to these"
+       caption = "The task is to generate high quality\nforecasts for 500 series sililar to these",
        subtitle = "Testing Set") + 
   theme(plot.subtitle = element_text(hjust = 1, face= "italic"))
 
