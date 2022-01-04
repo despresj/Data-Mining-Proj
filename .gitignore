@@ -7,3 +7,15 @@ notebooks/__pycache__/
 .Rproj.user
 R/saved_plots
 IQR-Final Project-CSE801B.mov
+
+report.bbl        
+report.md         
+report.tex
+             
+report.blg        
+   
+report.toc
+report.aux        
+report.log        
+report.synctex.gz 
+texput.log
